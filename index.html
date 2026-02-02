@@ -17,20 +17,24 @@
             font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
         }
 
-        .header {
+        .hero {
+            position: relative;
             width: 100%;
         }
 
-        .header img {
+        .hero img {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .video-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px 40px;
+        .video-overlay {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 55%;
+            max-width: 640px;
         }
 
         .video-container {
@@ -48,21 +52,27 @@
             height: 100%;
             border: none;
         }
+
+        @media (max-width: 768px) {
+            .video-overlay {
+                width: 85%;
+                bottom: 3%;
+            }
+        }
     </style>
 </head>
 <body>
-    <header class="header">
+    <section class="hero">
         <img src="header.jpg" alt="53期藤沢ラグビースクール">
-    </header>
-
-    <section class="video-section">
-        <div class="video-container">
-            <iframe
-                src="https://www.youtube.com/embed/TClEuOWKPaA"
-                title="53期藤沢ラグビースクール"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+        <div class="video-overlay">
+            <div class="video-container">
+                <iframe
+                    src="https://www.youtube.com/embed/TClEuOWKPaA"
+                    title="53期藤沢ラグビースクール"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
     </section>
 </body>
