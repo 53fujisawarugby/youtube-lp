@@ -11,8 +11,12 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
-            min-height: 100vh;
             background: #0a1628;
             font-family: 'Segoe UI', 'Hiragino Sans', 'Meiryo', sans-serif;
         }
@@ -20,21 +24,18 @@
         .hero {
             position: relative;
             width: 100%;
-        }
-
-        .hero img {
-            width: 100%;
-            height: auto;
-            display: block;
+            height: 100vh;
+            background: url('header.jpg') no-repeat center top;
+            background-size: cover;
         }
 
         .video-overlay {
             position: absolute;
-            bottom: 5%;
+            bottom: 8%;
             left: 50%;
             transform: translateX(-50%);
-            width: 55%;
-            max-width: 640px;
+            width: 65%;
+            max-width: 800px;
         }
 
         .video-container {
@@ -54,16 +55,31 @@
         }
 
         @media (max-width: 768px) {
+            html, body {
+                overflow: auto;
+            }
+
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                background-size: contain;
+                background-position: center top;
+                padding-top: 56.25%;
+            }
+
             .video-overlay {
-                width: 85%;
-                bottom: 3%;
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                width: 90%;
+                margin: 20px auto;
             }
         }
     </style>
 </head>
 <body>
     <section class="hero">
-        <img src="header.jpg" alt="53期藤沢ラグビースクール">
         <div class="video-overlay">
             <div class="video-container">
                 <iframe
